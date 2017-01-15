@@ -1,4 +1,4 @@
-package com.apps.appcerca.watchque;
+package com.apps.appcerca.flicks;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;
@@ -21,6 +21,6 @@ public class ExampleInstrumentedTest {
         // Context of the app under test.
         Context appContext = InstrumentationRegistry.getTargetContext();
 
-        assertEquals("com.apps.appcerca.watchque", appContext.getPackageName());
+        assertEquals("com.apps.appcerca.flicks", appContext.getPackageName());
     }
 }

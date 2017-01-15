@@ -11,7 +11,7 @@
         android:id="@+id/ivMovieImage" />
 
     <TextView
-        android:text="Game of thrones"
+        tools:text="Game of thrones"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvTitle"
@@ -21,7 +21,7 @@
         android:layout_toEndOf="@+id/ivMovieImage" />
 
     <TextView
-        android:text="In the North, after thousands of years of disappearance, the Others are back. The War of Five Kings (Robb, Joffrey, Stannis, Renly, Balon Greyjoy) is raging"
+        tools:text="In the North, after thousands of years of disappearance, the Others are back. The War of Five Kings (Robb, Joffrey, Stannis, Renly, Balon Greyjoy) is raging"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/tvOverview"

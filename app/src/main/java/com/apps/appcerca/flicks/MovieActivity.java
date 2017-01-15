@@ -1,12 +1,12 @@
-package com.apps.appcerca.watchque;
+package com.apps.appcerca.flicks;
 
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.ListView;
 
-import com.apps.appcerca.watchque.adapters.MovieArrayAdapters;
-import com.apps.appcerca.watchque.models.Movie;
+import com.apps.appcerca.flicks.adapters.MovieArrayAdapters;
+import com.apps.appcerca.flicks.models.Movie;
 import com.loopj.android.http.AsyncHttpClient;
 import com.loopj.android.http.JsonHttpResponseHandler;
 
@@ -28,13 +28,16 @@ public class MovieActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_movie);
+
         String url = "https://api.themoviedb.org/3/movie/now_playing?api_key=a07e22bc18f5cb106bfe4cc1f83ad8ed";
+
         lvItems = (ListView) findViewById(R.id.lvMovies);
         movies = new ArrayList<>();
         movieAdapter = new MovieArrayAdapters(this,movies);
         lvItems.setAdapter(movieAdapter);
-        AsyncHttpClient asynClient = new AsyncHttpClient();
-        asynClient.get(url, new JsonHttpResponseHandler(){
+
+        AsyncHttpClient client = new AsyncHttpClient();
+        client.get(url, new JsonHttpResponseHandler(){
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 JSONArray movieResults = null;

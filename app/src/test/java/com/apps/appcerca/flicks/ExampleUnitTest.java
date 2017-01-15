@@ -1,4 +1,4 @@
-package com.apps.appcerca.watchque;
+package com.apps.appcerca.flicks;
 
 import org.junit.Test;
 

@@ -1,7 +1,8 @@
-package com.apps.appcerca.watchque.adapters;
+package com.apps.appcerca.flicks.adapters;
 
 import android.content.Context;
 import android.support.annotation.NonNull;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,8 +10,8 @@ import android.widget.ArrayAdapter;
 import android.widget.ImageView;
 import android.widget.TextView;
 
-import com.apps.appcerca.watchque.R;
-import com.apps.appcerca.watchque.models.Movie;
+import com.apps.appcerca.flicks.R;
+import com.apps.appcerca.flicks.models.Movie;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
@@ -22,7 +23,7 @@ import java.util.List;
 public class MovieArrayAdapters extends ArrayAdapter<Movie>{
 
     public MovieArrayAdapters(Context context, List<Movie> movies){
-        super(context, android.R.layout.simple_list_item_1);
+        super(context, android.R.layout.simple_list_item_1, movies);
     }
 
     @NonNull
@@ -44,9 +45,9 @@ public class MovieArrayAdapters extends ArrayAdapter<Movie>{
 
         tvTitle.setText(movie.getTitle());
         tvOverview.setText(movie.getOverview());
-
+        Log.d("Debug", tvTitle.toString());
         Picasso.with(getContext()).load(movie.getPoster()).into(tvImage);
 
-        return tvOverview;
+        return convertView;
     }
 }

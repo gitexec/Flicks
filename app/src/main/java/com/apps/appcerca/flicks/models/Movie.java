@@ -1,4 +1,4 @@
-package com.apps.appcerca.watchque.models;
+package com.apps.appcerca.flicks.models;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -47,7 +47,7 @@ public class Movie {
     }
 
     public static ArrayList<Movie> toJSONArrayList(JSONArray moviesArray){
-        ArrayList<Movie> toArrayList = new ArrayList<Movie>();
+        ArrayList<Movie> toArrayList = new ArrayList<>();
         for(int i = 0; i<moviesArray.length(); i++){
             try {
                 toArrayList.add(new Movie(moviesArray.getJSONObject(i)));
